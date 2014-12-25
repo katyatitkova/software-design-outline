@@ -13,7 +13,7 @@
 
 \setlength\parindent{0pt}
 
-\title{Конспект по проектированию ПО \\ \vspace{2 mm} {\large v0.1}}
+\title{Конспект по проектированию ПО \\ \vspace{2 mm} {\large v0.2}}
 \date{}
 
 \begin{document}
@@ -27,25 +27,47 @@
 
 TODO: 
 \begin{itemize}
-\item картинки к паттернам;
-\item многослойная архитектура
+\item вычитывание теми, кто был на парах;
+\item недостающие картинки к паттернам;
+\item дописать ещё про паттерны;
+\item убрать пробелы в многослойной архитектуре.
 \end{itemize}
 
-\section{Порождающие паттерны\footnote{На самом деле, здесь почти всё взято из книжки}}
-Книжка по паттернам — конечно же, Банда Четырёх\footnote{Ralph Johnson, John Vlissides, Richard Helm, and Erich Gamma ``Design Patterns: Elements of Reusable Object-Oriented Software''}
+\section{Порождающие паттерны\footnote{На самом деле, здесь почти всё взято из книжки.}}
+Книжка по паттернам — конечно же, Банда Четырёх\footnote{Ralph Johnson, John Vlissides, Richard Helm, and Erich Gamma ``Design Patterns: Elements of Reusable Object-Oriented Software''}. Картинки здесь — с \url{http://www.oodesign.com}.
 \subsection{Singleton}
 Гарантирует, что у класса есть только один экземпляр, и предоставляет ему глобальную точку доступа.
 
-\subsection{Pool\footnote{Как ни странно, его нет в GoF}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=200pt]{pics/singleton-pattern.png}
+\end{figure}
+
+\subsection{Pool\footnote{Нет в GoF.}}
 Храним объекты готовыми к использованию: когда нужен, берём из пула (а не создаём), когда не нужен — возвращаем в пул (а не удаляем). Pool объектов никогда нельзя писать самому.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=300pt]{pics/objectpool-pattern.png}
+\end{figure}
 
 \subsection{Builder}
 Отделяет конструирование сложного объекта от его представления: в результате одного и того же процесса конструирования могут получаться разные представления.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=350pt]{pics/builder-pattern.png}
+\end{figure}
 
 \subsection{Prototype}
 Задаёт виды создаваемых объектов с помощью экземпляра-прототипа и создаёт новые объекты, копируя этот прототип.
 
 Используем, когда нужно много одинаковых объектов: например, в текстовом редакторе отрендерили один раз букву и юзаем. А ещё существует извращённый прототип с наследованием.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=300pt]{pics/prototype-pattern.png}
+\end{figure}
 
 \subsection{Factory Method}
 Определяет интерфейс для создания объекта, но оставляет подклассам решение о том, какой класс инстанцировать. Позволяет делегировать инстанцирование подклассам.
@@ -53,26 +75,46 @@ TODO:
 \subsection{Abstract Factory}
 Фабрика фабрик. Предоставляет интерфейс для создания семейств взаимосвязанных или взаимозависимых объектов, не специфицируя их конкретных классов.
 
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=550pt]{pics/abstract-factory-pattern.png}
-%\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=450pt]{pics/abstract-factory-pattern.png}
+\end{figure}
 
-\section{Структурные паттерны\footnote{И тут тоже}}
+\section{Структурные паттерны\footnote{И тут тоже.}}
 \subsection{Adapter}
 Чтоб скрестить ежа с ужом: для юзания классов, не совместимых по интерфейсу.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=300pt]{pics/adapter-pattern.png}
+\end{figure}
 
 \subsection{Bridge}
 Отделяет абстракцию от её реализации так, чтобы их можно было изменять независимо.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=400pt]{pics/bridge-pattern.png}
+\end{figure}
+
 \subsection{Composite}
 Компонует объекты в древовидные структуры для представления иерархий часть-целое. Позволяет клиентам единообразно трактовать индивидуальные и составные объекты.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=400pt]{pics/composite-pattern.png}
+\end{figure}
 
 \subsection{Facade}
 Предоставляет унифицированный интерфейс вместо набора интерфейсов подсистемы. Определяет интерфейс более высокого уровня для упрощения использования подсистемы. Если нет планов переписать, расширить, etc., то фасад не нужен.
 
 \subsection{Decorator}
 Динамически добавляет объекту новые обязанности. Является альтернативой порождению подклассов с целью расширения функциональности.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=400pt]{pics/decorator-pattern.png}
+\end{figure}
 
 \section{Многослойная архитектура}
 \begin{figure}[H]
