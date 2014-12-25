@@ -1,0 +1,18 @@
+digraph Bus {
+	//circo
+	node[shape=box];
+	graph[root=esb];
+	app1[label="App 1\nCard processing"];
+	app2[label="App 2\nВедение счетов"];
+	app3[label="App 3\nMobile provider"];
+	app4[label="App 4\nWeb Bank"];
+	esb[shape=circle, label="ESB"];
+	app1->esb;
+	esb->app1;
+	app2->esb;
+	esb->app2;
+	app3->esb;
+	esb->app3;
+	app4->esb;
+	esb->app4;
+}

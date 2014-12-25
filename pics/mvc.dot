@@ -1,0 +1,12 @@
+digraph MVC {
+	//circo
+	node[shape=box];
+	user[label="User", shape=circle];
+	view[label="View"];
+	controller[label="Controller"];
+	model[label="Model"];
+	controller->model[label="Update"];
+	model->view[label="Notify"];
+	user->controller[label="Input"];
+	view->user[label="See"];
+}

@@ -1,0 +1,12 @@
+digraph Layers {
+	node[shape=box];
+	data[label="Data layer"];
+	business[label="Business logic"];
+	presentation[label="Presentation"];
+	user[label="User"];
+	data->business[dir=both];
+	business->presentation[dir=both];
+	presentation->user[style=invis];
+	user->presentation;
+	presentation->user[style=invis];
+}

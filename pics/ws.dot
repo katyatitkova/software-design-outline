@@ -1,0 +1,11 @@
+digraph WS {
+	rankdir=LR;
+	node[shape=box];
+	processing[label="Card processing"];
+	account[label="Ведение счетов"];
+	provider[label="Mobile provider"];
+	phone[label="Phone"];
+	processing->provider[label="WS"];
+	account->provider[label="WS"];
+	provider->phone;
+}

@@ -1,0 +1,8 @@
+digraph OneLayerOneObject {
+	node[shape=plaintext];
+	dto[label="DTO (Data transfer object)"];
+	business[label="Business Object/Entity"];
+	presentation[label="Presentations"];
+	dto->business[dir=both];
+	business->presentation[dir=both];
+}

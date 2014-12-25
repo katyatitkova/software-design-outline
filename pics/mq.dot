@@ -1,0 +1,34 @@
+digraph MQ {
+	//circo
+	rankdir=LR;
+	node[shape=box];
+	processing[label="Card processing"];
+	account[label="Ведение счетов"];
+	mq[label="MQ"];
+	mqans[label="MQ"];
+	provider[label="Mobile provider"];
+	phone[label="Phone"];
+
+	processing->account[style=invis];
+	account->processing[style=invis];
+
+	mqans->processing[label="ответы"];
+	processing->mqans[style=invis];
+
+	account->mq;
+	mq->account[style=invis];
+
+	processing->mq;
+	mq->processing[style=invis];
+
+	mqans->account;
+	account->mqans[style=invis];
+
+	mq->mqans[style=invis];
+	mqans->mq[style=invis];
+
+	mq->provider;
+	provider->mqans;
+
+	provider->phone;
+}
