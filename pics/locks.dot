@@ -1,0 +1,9 @@
+digraph MQ {
+	rankdir=LR;
+
+	A->B;
+	B->A[style=invis];
+	A->C;
+	B->C;
+	C->B;
+}
